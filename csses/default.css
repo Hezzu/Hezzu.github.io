@@ -1,10 +1,10 @@
 :root
 {
     /* For Later JS */
-    --Website-background: #130044;
-    --Header-background: #0099ff;
-    --HeaderSubDivs-background: #00d9ff;
-    --TopControls-background: #71009e;
+    --Website-background: #131313;
+    --Header-background: #474747;
+    --HeaderSubDivs-background: #818181;
+    --TopControls-background: #4d4d4d;
     /* Black Theme Colors */
     --Website-background-black: #131313;
     --Header-background-black: #474747;
@@ -31,71 +31,123 @@
 body{
     display: flex;
     flex-direction: column;
-    background-color: var(--Website-background);
-    justify-content: center;
+    background: var(--Website-background);
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
 }
 header{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     background-color: var(--Header-background);
     border-radius: 1rem;
-    width: 99vw;
-    height: 30vh;
-
+    width: 80vw;
+    height: 200vh;
+}
+#mainPane
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80vw;
+    height: 40vh;
 }
 h1{
-    font-family: Comic Sans MS, Comic Sans, cursive;
     color: var(--Website-background);
-    font-size: calc((5vw + 5vh)/2);
+    font-size: calc((5vw + 5vh)/2 );
+    margin: 0vh 0vw;
 }
 #h1div
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background-color: var(--HeaderSubDivs-background);
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius: 1rem;
-    width: 40vw;
-    height: 25vh;
+    border-radius: 10rem;
+    margin-top: 3vh;
+    width: 45vw;
+    height: 60vh;
 
+}
+#h1div > img
+{
+    display: flex;
+    height: calc((10vw + 10vh));
+    width: calc((10vw + 10vh));
+    align-self: center;
+    border: black calc((2vh + 2vw)/8) solid;
+    background-size: 5vh 5vw;
+    border-radius: 50%;
 }
 #clock
 {
-    font-family: "Work Sans", sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 3vh;
     background-color: var(--HeaderSubDivs-background);
     color: var(--Website-background);
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius: 1rem;
-    width: 50vw;
+    border-radius: 50rem;
+    width: 25vw;
     height: 25vh;
 }
   .hms {
-      font-size: calc((10vw + 10vh)/2);
-      font-weight: 200;
+      font-size: calc((7vw +    7vh)/2);
+      font-weight: 2000;
   }
   .ampm {
       font-size: calc((7vw + 7vh)/2);
+      font-weight: 350;
   }
+  .weekDay
+  {
+        display: flex;
+        flex-direction: row;
+  }
+  .weekDay > div
+  {
+        display: flex;
+        background: var(--HeaderSubDivs-background);
+        align-items: center;
+        justify-content: center;
+        font-size: calc((0.7vh + 0.7vw));
+        color: var(--Website-background);
+        margin: 2.5vh 1vw 0vh 0vw;
+        border-radius: 1rem;
+        width: 3vw;
+        height: 5vh;
+
+  }
+/* External Block  */
   .date {
-      margin-top: -5% !important;
-      font-size: calc((5vw + 5vh)/2);
-  }
-/* Theme Picker */
-#themePicker
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5vh;
+    background-color: var(--HeaderSubDivs-background);
+    color: var(--Website-background);
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    border-radius: 50rem;
+    width: 25vw;
+    height: 25vh;
+    font-size: calc((3vw + 3vh)/2);
+    font-weight: 1000;
+}
+/* Controls Menu */
+#controlMenu
 {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    height: 25vh;
-    width: 0.1vw;
+    height: 7vh;
+    width: 80vw;
 }
 .themeButton
 {
@@ -104,14 +156,21 @@ h1{
     align-items: center;
     padding: 0.1vh 0.01vw;
     height: 5vh;
-    width: 3vw;
+    width: 6vw;
+    margin: 0vh 0.5vw;
     border-radius: 0.3rem;
 }
 .themeButton > span
 {
-    width: 2vw;
+    width: 4vw;
     height: 3vh;
     border-radius: 0.2rem;
+}
+#themeButtons
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0vh 1vw;
 }
 #themeBlack
 {
@@ -131,7 +190,7 @@ h1{
 }
 #themeColor
 {
-    background-color: var(--Website-background-color);
+    background-image: url(../source/ColorBackground.gif);
 }
 #themeColor > .insideA
 {
@@ -144,4 +203,29 @@ h1{
 #themeContrast> .insideA
 {
     background-color: var(--Header-background-contrast);
+}
+/* Clock Controls */
+#clockButtons
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0vh 1vw;
+}
+.clockButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1vh 0.01vw;
+    margin: 0vh 0.5vw;
+    height: 5vh;
+    width: 6vw;
+    border-radius: 0.3rem;
+    background-color: var(--Website-background);
+}
+.clockButton > span
+{
+    color: var(--HeaderSubDivs-background);
+    font-size: calc((1vw + 1vh));
+    user-select: none;
 }

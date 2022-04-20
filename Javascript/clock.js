@@ -1,27 +1,16 @@
-function updateTime() {
+var type
+function updateTime(type) {
     var dateInfo = new Date();
+    this.type = type
   
     /* time */
-    var hr,
-      _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes(),
-      sec = (dateInfo.getSeconds() < 10) ? "0" + dateInfo.getSeconds() : dateInfo.getSeconds(),
-      ampm = (dateInfo.getHours() > 12) ? "PM" : "AM";
+    var hr = dateInfo.getHours(),
+      _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
   
-    // replace 0 with 12 at midnight, subtract 12 from hour if 13–23
-    if (dateInfo.getHours() == 0) {
-      hr = 12;
-    } else if (dateInfo.getHours() > 12) {
-      hr = dateInfo.getHours() - 12;
-    } else {
-      hr = dateInfo.getHours();
-    }
-  
-    var currentTime = hr + ":" + _min + ":" + sec;
+    var currentTime = hr + ":" + _min;
   
     // print time
     document.getElementsByClassName("hms")[0].innerHTML = currentTime;
-    document.getElementsByClassName("ampm")[0].innerHTML = ampm;
-  
     /* date */
     var dow = [
         "Sunday",
@@ -49,13 +38,32 @@ function updateTime() {
       day = dateInfo.getDate();
   
     // store date
-    var currentDate = dow[dateInfo.getDay()] + ", " + month[dateInfo.getMonth()] + " " + day;
+    var currentDate = day + " " +  month[dateInfo.getMonth()] + " " + dateInfo.getFullYear();
+    var tBlock = document.getElementById(dateInfo.getDay());
   
     document.getElementsByClassName("date")[0].innerHTML = currentDate;
-  };
-  
+    tBlock.style.background = "#ff0015";
+
+     if(type)
+    {
+        if (dateInfo.getHours() == 0) {
+          hr = 12;
+        } else if (dateInfo.getHours() > 12) {
+          hr = dateInfo.getHours() - 12;
+        } else {
+          hr = dateInfo.getHours();
+        }
+        ampm = (dateInfo.getHours() > 12) ? "PM" : "AM";
+        document.getElementsByClassName("ampm")[0].innerHTML = ampm;
+        var currentTime = hr + ":" + _min;
+        document.getElementsByClassName("hms")[0].innerHTML = currentTime;
+      } else{
+        document.getElementsByClassName("ampm")[0].innerHTML = "";
+      }
+};
+
   // print time and date once, then update them every second
-  updateTime();
+  updateTime(type);
   setInterval(() => {
-    updateTime()
+    updateTime(type)
 }, 1000);
