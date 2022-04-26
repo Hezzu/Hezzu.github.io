@@ -7,7 +7,7 @@ function updateTime(type) {
     var hr = dateInfo.getHours(),
       _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
   
-    var currentTime = hr + ":" + _min;
+    var currentTime = hr + ":" + _min ;
   
     // print time
     document.getElementsByClassName("hms")[0].innerHTML = currentTime;
