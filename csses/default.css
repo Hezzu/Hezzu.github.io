@@ -163,15 +163,15 @@ header > img
     justify-content: center;
     align-items: center;
     padding: 0.1vh 0.01vw;
-    min-height: max(6vh, 20px);
-    min-width: max(4vw, 30px);
+    min-height: 6vh;
+    min-width: 4vw;
     margin: 1vh 0.7vw;
     border-radius: 0.3rem;
 }
 .themeButton > span
 {
-    min-width: max(2vw, 15px);
-    min-height: max(3vh, 10px);
+    min-width: 2vw;
+    min-height: 3vh;
     border-radius: 0.2rem;
 }
 #themeButtons
