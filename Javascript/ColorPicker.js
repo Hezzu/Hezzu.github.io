@@ -16,7 +16,7 @@ switch(theme){
         break
     case "color":
         document.body.style.setProperty('--Website-background', '#130044')
-        document.body.style.background = "url(source/ColorBackground.gif)"
+        document.body.style.background = "url(source/ColorBackground.webp)"
         document.body.style.setProperty('--Header-background', '#0099ff')
         document.body.style.setProperty('--HeaderSubDivs-background', '#00d9ff')
         document.body.style.setProperty('--TopControls-background', '#71009e')
