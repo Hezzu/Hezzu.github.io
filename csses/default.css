@@ -37,19 +37,19 @@ body{
 }
 #Pane{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     background-color: var(--Header-background);
-    border-radius: 1rem;
+    border-radius: 1vw;
     width: 95vw;
 }
 #mainPane
 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     flex-wrap: wrap;
+    width: 90vw;
 }
 /* Header */
 header
@@ -57,35 +57,39 @@ header
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-   /* justify-content: center;*/
     background-color: var(--HeaderSubDivs-background);
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius: 0.5rem 0.5rem 3rem 3rem;
-    margin: 1vh  1vw;
+    border-radius: 1em;
+    margin: 3vh  1vw;
     padding-top: 1%;
     flex-grow: 1;
+    justify-content: space-evenly;
 }
 header > img
 {
     display: flex;
-    flex-grow: 1;
-    border: black 0.3rem solid;
-    border-radius: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: black 0.1em solid;
+    border-radius: 100em;
+    max-width: 30vw;
     margin: 1%;
 }
 h1{
+    display: flex;
+    flex-wrap: wrap;
     color: var(--Website-background);
-    font-size: 3rem;
+    font-size: 5vw;
     margin: 0% 0%;
     white-space: nowrap;
-    text-align: center;
-    flex-grow: 10;
+    justify-content: center;
 }
 
 /* Date and Time */
 .cat
 {
     display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
     margin: 1vh  0;
 
@@ -97,28 +101,29 @@ h1{
     justify-content: center;
     align-items: center;
     margin: 1vh 0.5vw;
-    border-radius: 2rem;
+    border-radius: 2vw;
 
     background-color: var(--HeaderSubDivs-background);
     color: var(--Website-background);
 /*    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);*/
 }
   .hms {
-      font-size: 4rem;
+      font-size: 15vw;
       font-weight: 700;
   }
   .ampm {
-      font-size: 3.8rem;
+      font-size: 15vw;
       font-weight: 600;
   }
   .weekDay
   {
         display: flex;
+        order: 3;
         flex-wrap: nowrap;
         flex-grow: 2;
         align-items: center;
         justify-content: center;
-        margin: 1vh 0;
+        margin: 1vh 0.5vw;
 
   }
   .weekDay > div
@@ -132,8 +137,9 @@ h1{
         padding: 0vh 1vw;
         height: 90%;
         width: 8%;
+        font-size: 3vw;
         color: var(--Website-background);
-        border-radius: 1rem;
+        border-radius: 1vw;
   }
 /* External Block  */
   .date {
@@ -146,19 +152,18 @@ h1{
     background-color: var(--HeaderSubDivs-background);
     color: var(--Website-background);
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius: 2rem;
-    font-size: 2rem;
+    border-radius: 2vw;
+    font-size: 4vw;
     font-weight: 1000;
 }
 /* Controls Menu */
 #controlMenu
 {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1vw 1vw 0 0;
     background-color: var(--HeaderSubDivs-background) ;
 }
 .themeButton
@@ -168,18 +173,20 @@ h1{
     align-items: center;
     padding: 1vh 1.3vw;
     margin: 0.5vh 0.7vw;
-    border-radius: 0.3rem;
+    border-radius: 0.3vw;
+    width: 2vw;
+    height: 2vw;
 }
 .themeButton > span
 {
-    border-radius: 0.2rem;
-    padding: 0.8vh 1vw;
+    border-radius: 0.2vw;
+    width: 2vw;
+    height: 2vw;
 }
 #themeButtons
 {
     display: flex;
     justify-content: flex-start;
-    flex-direction: row;
     margin: 1vh 1vw;
     flex-grow: 1;
 }
@@ -215,40 +222,27 @@ h1{
 {
     background-color: var(--Header-background-contrast);
 }
-/* Fill span */
-#controlMenu > span
-{
-    display: flex;
-    flex-grow: 1;
-}
-#controlMenu > span:before {
-    content: "\200D";
-    display:inline;
- }
-
 /* Clock Controls */
 #clockButtons
 {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row;
-    flex-grow: 1;
+    flex-grow: 2;
     margin: 0vh 1vw;
 }
 .clockButton
 {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    padding: 0.1vh 0.01vw;
-    margin: 1vh 0.5vw;
-    border-radius: 0.3rem;
+    margin: 0vh 0.5vw;
+    border-radius: 0.3vw;
     background-color: var(--Website-background);
     flex-grow: 1;
+    cursor: pointer;
 }
 .clockButton > span
 {
     color: var(--HeaderSubDivs-background);
-    font-size: 1.5rem;
+    font-size: 2vw;
     user-select: none;
 }
