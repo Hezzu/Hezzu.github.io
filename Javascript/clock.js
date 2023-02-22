@@ -38,11 +38,12 @@ function updateTime(type) {
       day = dateInfo.getDate();
   
     // store date
-    var currentDate = day + " " +  month[dateInfo.getMonth()] + " " + dateInfo.getFullYear();
+    var currentDate = day + " " +  month[dateInfo.getMonth()] + "</br>" + dateInfo.getFullYear();
     var tBlock = document.getElementById(dateInfo.getDay());
   
     document.getElementsByClassName("date")[0].innerHTML = currentDate;
     tBlock.style.background = "#ff0015";
+    tBlock.style.color = "#610000";
 
      if(type)
     {
@@ -53,13 +54,31 @@ function updateTime(type) {
         } else {
           hr = dateInfo.getHours();
         }
-        ampm = (dateInfo.getHours() > 12) ? "PM" : "AM";
-        document.getElementsByClassName("ampm")[0].innerHTML = ampm;
+        // ampm = (dateInfo.getHours() > 12) ? "AM</br>PM" : "AM</br>PM";
+        // document.getElementsByClassName("ampm")[0].innerHTML = ampm;
+        // var currentTime = hr + ":" + _min;
+        // document.getElementsByClassName("hms")[0].innerHTML = currentTime;
+        var am = document.getElementsByClassName("am")[0];
+        var pm = document.getElementsByClassName("pm")[0];
+        if(dateInfo.getHours() > 12)
+        {
+          am.innerHTML = "AM";
+          pm.innerHTML = "PM";
+          pm.style.color = "#ff0015";
+          am.style.color = "#000000";
+        }else{
+          am.innerHTML = "AM";
+          pm.innerHTML = "PM";
+          am.style.color = "#ff0015";
+          pm.style.color = "#000000";
+        }
         var currentTime = hr + ":" + _min;
         document.getElementsByClassName("hms")[0].innerHTML = currentTime;
       } else{
-        document.getElementsByClassName("ampm")[0].innerHTML = "";
+        document.getElementsByClassName("am")[0].innerHTML = "";
+        document.getElementsByClassName("pm")[0].innerHTML = "";
       }
+
 };
 
   // print time and date once, then update them every second

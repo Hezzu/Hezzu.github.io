@@ -1,10 +1,10 @@
 function changeTheme(theme){
 switch(theme){
     case "black":
-        document.body.style.setProperty('--Website-background', '#131313')
-        document.body.style.background = "#131313"
-        document.body.style.setProperty('--Header-background', '#474747')
-        document.body.style.setProperty('--HeaderSubDivs-background', '#818181')
+        document.body.style.setProperty('--Website-background', '#000000')
+        document.body.style.background = "#000000"
+        document.body.style.setProperty('--Header-background', '#1a0000')
+        document.body.style.setProperty('--HeaderSubDivs-background', '#5f0101')
         document.body.style.setProperty('--TopControls-background', '#4d4d4d')
         break
     case "white":
@@ -29,6 +29,6 @@ switch(theme){
         document.body.style.setProperty('--TopControls-background', '#dddddd')
         break
     default:
-        console.log("Error");
+        console.log("Error changing colors");
 }
 }
