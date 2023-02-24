@@ -35,7 +35,7 @@ body{
     flex-direction: column;
     background: var(--Website-background);
     align-items: center;
-    /* font-family: "Arial", sans-serif; */
+    font-family: "Arial", sans-serif;
 }
 @media only screen and (max-width: 600px) {
     #Pane{
@@ -54,7 +54,7 @@ body{
         align-items: center;
         flex-wrap: wrap;
         height: 100%;
-        width: 90%;
+        width: 100%;
         justify-content: center;
         color: var(--TextColor);
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);    
@@ -99,7 +99,7 @@ body{
     h1{
         display: flex;
         flex-wrap: wrap;
-        font-size: 5vw;
+        font-size: 2em;
         /* animation: glow 1s ease-in-out infinite alternate; */
         margin: 5%;
         white-space: nowrap;
@@ -136,7 +136,7 @@ body{
         background-color: var(--HeaderSubDivs-background);
     }
       .hms {
-          font-size: 10vw;
+          font-size: 4em;
           font-weight: 700;
       }
       .ampm{
@@ -144,11 +144,11 @@ body{
         flex-direction: column;
       }
       .am {
-          font-size: 4vw;
+          font-size: 1.5em;
           font-weight: 600;
       }
       .pm {
-        font-size: 4vw;
+        font-size: 1.5em;
         font-weight: 600;
     }
       .weekDay
@@ -292,7 +292,7 @@ body{
         align-items: center;
         flex-wrap: wrap;
         height: 100%;
-        width: 90%;
+        width: 100%;
         justify-content: center;
         color: var(--TextColor);
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);    
@@ -366,15 +366,18 @@ body{
         order: 1;
     
     }
+    #cad{
+        display: flex;
+        flex-direction: row;
+    }
     #clock
     {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 2%;
+        margin: 1%;
         border-radius: 1em;
         padding: 1%;
-    
         background-color: var(--HeaderSubDivs-background);
     }
       .hms {
@@ -386,20 +389,18 @@ body{
         flex-direction: column;
       }
       .am {
-          font-size: 4vw;
+          font-size: 3.8vw;
           font-weight: 600;
       }
       .pm {
-        font-size: 4vw;
+        font-size: 3.8vw;
         font-weight: 600;
     }
       .weekDay
       {
             display: flex;
-            order: 3;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
             margin: 1vh 0.5vw;
     
       }
@@ -410,10 +411,12 @@ body{
             align-items: center;
             justify-content: space-evenly;
             margin: 2%;
-            padding: 3%;
-            font-size: 3vw;
+            flex-grow: 1;
+            padding: 2%;
+            font-size: 2vw;
             border-radius: 1vw;
             box-shadow: 0 0px 20px 20px rgba(0, 0, 0, 0.24), 0 0px 10px 1px rgb(255, 0, 0);
+            min-width: 30%;
       }
     /* External Block  */
       .date {
@@ -421,9 +424,9 @@ body{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin: 2%;
+        margin: 1%;
         background-color: var(--HeaderSubDivs-background);
-        border-radius: 0.5em;
+        border-radius: 0.45em;
         padding: 1%;
         font-size: 3vw;
         font-weight: 1000;
