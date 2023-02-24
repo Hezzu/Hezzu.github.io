@@ -5,60 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="csses/default.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <script src="Javascript/ColorPicker.js"></script>
+    <script src="Javascript/autism.js"></script>
     <title>🌸Hezzu🌸</title>
 </head>
 <body onload="updateTime(false)">
     <div id="Pane">
         <div id="controlMenu">
-          <div id="themeButtons">
-            <div class="themeButton" id="themeBlack" onclick="changeTheme('black')"><span class="insideA"></span></div>
-            <div class="themeButton" id="themeWhite" onclick="changeTheme('white')"><span class="insideA"></span></div>
-            <div class="themeButton" id="themeColor" onclick="changeTheme('color')"><span class="insideA"></span></div>
-            <div class="themeButton" id="themeContrast" onclick="changeTheme('contrast')"><span class="insideA"></span></div>
+            <div id="themeButtons">
+                <div class="themeButton" id="themeBlack" onclick="changeTheme('black')"><span class="insideA"></span></div>
+                <div class="themeButton" id="themeWhite" onclick="changeTheme('white')"><span class="insideA"></span></div>
+                <div class="themeButton" id="themeColor" onclick="changeTheme('color')"><span class="insideA"></span></div>
+                <div class="themeButton" id="themeContrast" onclick="changeTheme('contrast')"><span class="insideA"></span></div>
+                <i class="material-icons" onclick="huerot()">blind</i>
             </div>
             <div id="clockButtons">
-                <div class="clockButton" id="24" onclick="updateTime(false)"><span>24</span></div>
-                <div class="clockButton" id="12" onclick="updateTime(true)"><span>12</span></div>
+                <div class="clockButton" onclick="updateTime(false)"><span>24h</span></div>
+                <div class="clockButton" onclick="updateTime(true)"><span>12h</span></div>
             </div>
         </div> 
-
-        <div id="mainPane">
-        
-        <header>
-            <!-- <svg width="500" height="500">
-                <mask id="circle">
-                    <circle fill="#ffffff" cx="40" cy="0" r="75"></circle>
-                </mask>
-            </svg> -->
-            <img alt="My actual discord pfp" src="./source/HeaderPhoto.webp" mask="url(#circle)" loading="lazy">
-            
-        </header>
-        <h1>🌸Hezzu🌸</h1>
-        <div class="cat">
-            <div id="cad    ">
-                <div id="clock">
-                    <span class="hms"></span>
-                    <span class="ampm">
-                        <span class="am">AM</span>
-                        <span class="pm">PM</span>
-                    </span>
+        <div id="mainPane">  
+            <header>
+                <img alt="My actual discord pfp" draggable="false" src="./source/HeaderPhoto.webp">     
+            </header>
+            <h1><span class="sak">🌸</span>Hezzu<span class="sak">🌸</span></h1>
+            <div id="cat">
+                <div id="cad">
+                    <div id="clock">
+                        <span class="hms"></span>
+                        <span class="ampm">
+                            <span class="am">AM</span>
+                            <span class="pm">PM</span>
+                        </span>
+                    </div>
+                    <div class="date"></div>    
                 </div>
                 <div class="weekDay">
-                    <div id="1">Mon</div>
-                    <div id="2">Tue</div>
-                    <div id="3">Wed</div>
-                    <div id="4">Thu</div>
-                    <div id="5">Fri</div>
-                    <div id="6">Sat</div>
-                    <div id="0">Sun</div>
+                    <span id="mon">Mon</span>
+                    <span id="tue">Tue</span>
+                    <span id="wed">Wed</span>
+                    <span id="thu">Thu</span>
+                    <span id="fri">Fri</span>
+                    <span id="sat">Sat</span>
+                    <span id="sun">Sun</span>
                 </div>
-                <div class="date"></div>
-            </div>
             </div>
         </div>
-    </div>
-    <div>
     </div>
     <script src="Javascript/clock.js"></script>
 </body>

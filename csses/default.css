@@ -17,504 +17,340 @@
     --Header-background-white: #bbbbbb;
     --HeaderSubDivs-background-white: #7c7c7c;
     --TopControls-background-white: #adadad;
-
+    --TextColor-white: ;
     /* Color theme Colors */
     --Website-background-color: #130044;
     --Header-background-color: #0099ff;
     --HeaderSubDivs-background-color: #00d9ff;
     --TopControls-background-color: #71009e;
+    --TextColor-Colors: ;
     /* Contrast theme Colors */
     --Website-background-contrast: #000000;
     --Header-background-contrast: #bbbbbb;
     --HeaderSubDivs-background-contrast: #ffffff;
     --TopControls-background-contrast: #dddddd;
+    --TextColor-contrast: ;
 
 }
 body{
     display: flex;
     flex-direction: column;
     background: var(--Website-background);
+
     align-items: center;
     font-family: "Arial", sans-serif;
 }
-@media only screen and (max-width: 600px) {
-    #Pane{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        background-color: var(--Header-background);
-        border-radius: 1vw;
-        width: 85vw;
-        justify-content: center;
+body.anim{
+    animation: hue-rot 3s linear infinite;
+}
+/* Whole site */
+#Pane{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--Header-background);
+    border-radius: 1vw;
+    width: 85vw;
+    justify-content: center;
+}
+/* Panel without color picker and clock switcher */
+#mainPane
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--TextColor);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);    
+}
+/* Header */
+header
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--HeaderSubDivs-background);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px rgb(255, 0, 0);
+    border-radius: 15em;
+    margin: 1% 2%;
+    padding: 1%;
+    justify-content: center;
+    order: 3;
+}
+/* Image */
+header > img
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: rgb(255, 0, 0) 0.15em solid;
+    border-radius: 50%;
+    max-width: 100%;
+    height: 20vw;
+    width: 20vw;
+    animation: hue-rot 10s linear infinite;
+
+}
+
+@keyframes hue-rot {
+    from{
+        filter: hue-rotate(0deg);
     }
-    #mainPane
-    {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        height: 100%;
-        width: 100%;
-        justify-content: center;
-        color: var(--TextColor);
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);    
-    }
-    /* Header */
-    header{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        background-color: var(--HeaderSubDivs-background);
-        box-shadow: 0 0px 20px 20px rgba(0, 0, 0, 0.24), 0 0px 10px 1px rgb(255, 0, 0);
-        border-radius: 15em;    
-        margin: 5%;
-        padding: 1%;
-        justify-content: center;
-    }
-    header > img
-    {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        border: black 0.1em solid;
-        border-radius: 50%;
-        max-width: 100%;
-        height: 20vw;
-        width: 20vw;
-        filter: blur(5px) grayscale(20%);
-        animation: hue-rot 10s linear infinite;
-        margin: 1.5%;
-    }
-    
-    @keyframes hue-rot {
-        from{
-            filter: hue-rotate(0deg);
-        }
-        to{
-            filter: hue-rotate(360deg);
-        }
-        
-    }
-    
-    h1{
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 2em;
-        /* animation: glow 1s ease-in-out infinite alternate; */
-        margin: 5%;
-        white-space: nowrap;
-        justify-content: center;
+    to{
+        filter: hue-rotate(360deg);
     }
     
-    /* @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #000000, 0 0 20px #630000, 0 0 30px #630000, 0 0 40px #630000, 0 0 50px #6d0036, 0 0 60px #630000, 0 0 70px #630000;
-        }
-        to {
-          text-shadow: 0 0 20px #000000, 0 0 30px #aa0000, 0 0 40px #aa0000, 0 0 50px #aa0000, 0 0 60px #aa0000, 0 0 70px #aa0000, 0 0 80px #aa0000;
-        }
-      } */
-    
-    /* Date and Time */
-    .cat
-    {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 1%;
-        justify-content: center;
-    
+}
+/* Nickname */
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2em;
+    margin: 1%;
+    /* animation: glow 1s ease-in-out infinite alternate; */
+    white-space: nowrap;
+    justify-content: center;
+    order: 2;
+    user-select: none;
+    cursor: default;
+}
+h1.anim{
+    animation: hue-rot 2.5s linear infinite;
+}
+.sak{
+    animation: sak-spin 5s linear infinite, glow 1s ease-in-out infinite alternate, hue-rot 10s linear infinite;
+    transform-origin: center 60%;
+}
+h1 > span:first-child{
+    translate: -15% -10%;
+}
+h1 > span:last-child{
+    translate: 15% -10%;
+}
+@keyframes sak-spin {
+    from{
+        rotate: 0deg;
     }
-    #clock
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 2%;
-        border-radius: 0.5em;
-        padding: 1%;
-    
-        background-color: var(--HeaderSubDivs-background);
-    }
-      .hms {
-          font-size: 4em;
-          font-weight: 700;
-      }
-      .ampm{
-        display: flex;
-        flex-direction: column;
-      }
-      .am {
-          font-size: 1.5em;
-          font-weight: 600;
-      }
-      .pm {
-        font-size: 1.5em;
-        font-weight: 600;
-    }
-      .weekDay
-      {
-            display: flex;
-            order: 3;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
-            margin: 1vh 0.5vw;
-    
-      }
-      .weekDay > div
-      {
-            display: flex;
-            background: var(--HeaderSubDivs-background);
-            align-items: center;
-            justify-content: space-evenly;
-            margin: 2%;
-            padding: 3%;
-            font-size: 3vw;
-            border-radius: 1vw;
-            box-shadow: 0 0px 20px 20px rgba(0, 0, 0, 0.24), 0 0px 10px 1px rgb(255, 0, 0);
-      }
-    /* External Block  */
-      .date {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 2%;
-        background-color: var(--HeaderSubDivs-background);
-        border-radius: 0.5em;
-        padding: 1%;
-        font-size: 3vw;
-        font-weight: 1000;
-        text-align: center;
-    }
-    /* Controls Menu */
-    #controlMenu
-    {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        border-radius: 1vw 1vw 0 0;
-        background-color: var(--HeaderSubDivs-background) ;
-    }
-    .themeButton
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10%;
-        margin: 2%;
-        border-radius: 0.3em;
-    }
-    .themeButton > span
-    {
-        border-radius: 0.2em;
-        padding: 1vw 1vw;
-    }
-    #themeButtons
-    {
-        display: flex;
-        justify-content: flex-start;
-        margin: 1%;
-    }
-    #themeBlack
-    {
-        background-color: var(--Website-background-black);
-    }
-    #themeBlack > .insideA
-    {
-        background-color: var(--Header-background-black);
-    }
-    #themeWhite
-    {
-        background-color: var(--Website-background-white);
-    }
-    #themeWhite > .insideA
-    {
-        background-color: var(--Header-background-white);
-    }
-    #themeColor
-    {
-        background-image: url(../source/ColorBackground.webp);
-    }
-    #themeColor > .insideA
-    {
-        background-color: var(--Header-background-color);
-    }
-    #themeContrast
-    {
-        background-color: var(--Website-background-contrast);
-    }
-    #themeContrast> .insideA
-    {
-        background-color: var(--Header-background-contrast);
-    }
-    /* Clock Controls */
-    #clockButtons
-    {
-        display: flex;
-        justify-content: end;
-        margin: 1%;
-    }
-    .clockButton
-    {
-        display: flex;
-        border-radius: 0.3em;
-        background-color: var(--Website-background);
-        cursor: pointer;
-        margin: 5%;
-        padding: 15%;
-    }
-    .clockButton > span
-    {
-        font-size: 2vw;
-        user-select: none;
-        color: var(--TextColor);
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);
+    to{
+        rotate: 360deg;
     }
 }
-/*desktops*/
 
-@media only screen and (min-width: 601px) {
-    #Pane{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        background-color: var(--Header-background);
-        border-radius: 1vw;
-        width: 85vw;
-        justify-content: center;
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #000000, 0 0 10px #630000, 0 0 15px #630000;
     }
-    #mainPane
-    {
+    to {
+      text-shadow: 0 0 20px #000000, 0 0 40px #aa0000, 0 0 60px #aa0000;
+    }
+  }
+
+/* Date and Time */
+#cat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1% 2%;
+    max-width: 40%;
+    order: 1;
+    cursor: default;
+    user-select: none;
+}
+#cat.anim{
+    animation: hue-rot 2.8s linear infinite;
+}
+/* Whole calendar panel */
+#cad{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1%;
+    justify-content: space-between;
+}
+/* Clock */
+#clock
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    border-radius: 0.45em;
+    padding: 5%;
+    /* background-color: var(--HeaderSubDivs-background); */
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 1px 1px rgb(255, 0, 0);
+    min-width: 38%;
+}
+/* Clock time */
+  .hms {
+      font-size: 2em;
+      font-weight: 700;
+  }
+  /* Panel with both AM and PM divs */
+  .ampm{
+    display: flex;
+    flex-direction: column;
+  }
+  /* Am div */
+  .am {
+      font-size: 0.75em;
+      font-weight: 600;
+  }
+  /* Pm div */
+  .pm {
+    font-size: 0.75em;
+    font-weight: 600;
+}
+/* Panel for Days of week */
+  .weekDay
+  {
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        height: 100%;
         width: 100%;
-        justify-content: center;
-        color: var(--TextColor);
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);    
-    }
-    /* Header */
-    header
-    {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        background-color: var(--HeaderSubDivs-background);
-        box-shadow: 0 0px 20px 20px rgba(0, 0, 0, 0.24), 0 0px 10px 1px rgb(255, 0, 0);
-        border-radius: 15em;    
-        margin: 5%;
-        padding: 1%;
-        justify-content: center;
-        order: 2;
-    }
-    header > img
-    {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        border: black 0.1em solid;
-        border-radius: 50%;
-        max-width: 100%;
-        height: 20vw;
-        width: 20vw;
-        filter: blur(5px) grayscale(20%);
-        animation: hue-rot 10s linear infinite;
-        margin: 1.5%;
-    }
-    
-    @keyframes hue-rot {
-        from{
-            filter: hue-rotate(0deg);
-        }
-        to{
-            filter: hue-rotate(360deg);
-        }
-        
-    }
-    
-    h1{
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 5vw;
-        /* animation: glow 1s ease-in-out infinite alternate; */
-        margin: 5%;
-        white-space: nowrap;
-        justify-content: center;
-        order: 3;
-    }
-    
-    /* @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #000000, 0 0 20px #630000, 0 0 30px #630000, 0 0 40px #630000, 0 0 50px #6d0036, 0 0 60px #630000, 0 0 70px #630000;
-        }
-        to {
-          text-shadow: 0 0 20px #000000, 0 0 30px #aa0000, 0 0 40px #aa0000, 0 0 50px #aa0000, 0 0 60px #aa0000, 0 0 70px #aa0000, 0 0 80px #aa0000;
-        }
-      } */
-    
-    /* Date and Time */
-    .cat
-    {
-        display: flex;
         flex-wrap: wrap;
         margin: 1%;
-        justify-content: center;
-        order: 1;
-    
-    }
-    #cad{
+
+  }
+  /* span of days */
+  .weekDay > span
+  {
         display: flex;
-        flex-direction: row;
-    }
-    #clock
-    {
-        display: flex;
-        justify-content: center;
+        /* background: var(--HeaderSubDivs-background); */
         align-items: center;
-        margin: 1%;
-        border-radius: 1em;
-        padding: 1%;
-        background-color: var(--HeaderSubDivs-background);
-    }
-      .hms {
-          font-size: 10vw;
-          font-weight: 700;
-      }
-      .ampm{
-        display: flex;
-        flex-direction: column;
-      }
-      .am {
-          font-size: 3.8vw;
-          font-weight: 600;
-      }
-      .pm {
-        font-size: 3.8vw;
-        font-weight: 600;
-    }
-      .weekDay
-      {
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            margin: 1vh 0.5vw;
-    
-      }
-      .weekDay > div
-      {
-            display: flex;
-            background: var(--HeaderSubDivs-background);
-            align-items: center;
-            justify-content: space-evenly;
-            margin: 2%;
-            flex-grow: 1;
-            padding: 2%;
-            font-size: 2vw;
-            border-radius: 1vw;
-            box-shadow: 0 0px 20px 20px rgba(0, 0, 0, 0.24), 0 0px 10px 1px rgb(255, 0, 0);
-            min-width: 30%;
-      }
-    /* External Block  */
-      .date {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1%;
-        background-color: var(--HeaderSubDivs-background);
-        border-radius: 0.45em;
-        padding: 1%;
-        font-size: 3vw;
-        font-weight: 1000;
-        text-align: center;
-    }
-    /* Controls Menu */
-    #controlMenu
-    {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        border-radius: 1vw 1vw 0 0;
-        background-color: var(--HeaderSubDivs-background) ;
-    }
-    .themeButton
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10%;
+        justify-content: space-evenly;
         margin: 2%;
-        border-radius: 0.3em;
-    }
-    .themeButton > span
-    {
-        border-radius: 0.2em;
-        padding: 1vw 1vw;
-    }
-    #themeButtons
-    {
-        display: flex;
-        justify-content: flex-start;
-        margin: 1%;
-    }
-    #themeBlack
-    {
-        background-color: var(--Website-background-black);
-    }
-    #themeBlack > .insideA
-    {
-        background-color: var(--Header-background-black);
-    }
-    #themeWhite
-    {
-        background-color: var(--Website-background-white);
-    }
-    #themeWhite > .insideA
-    {
-        background-color: var(--Header-background-white);
-    }
-    #themeColor
-    {
-        background-image: url(../source/ColorBackground.webp);
-    }
-    #themeColor > .insideA
-    {
-        background-color: var(--Header-background-color);
-    }
-    #themeContrast
-    {
-        background-color: var(--Website-background-contrast);
-    }
-    #themeContrast> .insideA
-    {
-        background-color: var(--Header-background-contrast);
-    }
-    /* Clock Controls */
-    #clockButtons
-    {
-        display: flex;
-        justify-content: end;
-        margin: 1%;
-    }
-    .clockButton
-    {
-        display: flex;
-        border-radius: 0.3em;
-        background-color: var(--Website-background);
-        cursor: pointer;
-        margin: 5%;
-        padding: 15%;
-    }
-    .clockButton > span
-    {
+        flex-grow: 1;
+        padding: 2%;
         font-size: 2vw;
-        user-select: none;
-        color: var(--TextColor);
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);
-    }
+        border-radius: 1vw;
+        box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 1px 1px rgb(255, 0, 0);
+        min-width: 42%;
+  }
+/* Date Block  */
+  .date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    /* background-color: var(--HeaderSubDivs-background); */
+    border-radius: 0.45em;
+    padding: 2%;
+    font-size: 1em;
+    font-weight: 1000;
+    text-align: center;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 1px 1px rgb(255, 0, 0);
+    min-width: 43%;
+}
+/* Controls Menu */
+#controlMenu
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1vw 1vw 0 0;
+    background-color: var(--HeaderSubDivs-background) ;
+}
+/* Out Theme buttons */
+.themeButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    margin: 2%;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.material-icons{
+    font-family: 'Material Icons';
+    display: flex;
+    align-self: center;
+    color: #bbff00;
+    animation: hue-rot 3s linear infinite;
+    cursor: pointer;
+    user-select: none;
+}
+/* Inner Theme Buttons */
+.themeButton > span
+{
+    border-radius: 0.2em;
+    padding: 1vw 1vw;
+    cursor: pointer;
+}
+/* div cointaing theme buttons */
+#themeButtons
+{
+    display: flex;
+    justify-content: flex-start;
+    margin: 1%;
+}
+/* Dark theme button */
+#themeBlack
+{
+    background-color: var(--Website-background-black);
+}
+/* span inside dark theme button */
+#themeBlack > .insideA
+{
+    background-color: var(--Header-background-black);
+}
+/* Light theme button */
+#themeWhite
+{
+    background-color: var(--Website-background-white);
+}
+/* span inside light theme button */
+#themeWhite > .insideA
+{
+    background-color: var(--Header-background-white);
+}
+#themeColor
+{
+    background-image: url(../source/ColorBackground.webp);
+}
+#themeColor > .insideA
+{
+    background-color: var(--Header-background-color);
+}
+#themeContrast
+{
+    background-color: var(--Website-background-contrast);
+}
+#themeContrast> .insideA
+{
+    background-color: var(--Header-background-contrast);
+}
+/* div containing Clock Control buttons */
+#clockButtons
+{
+    display: flex;
+    justify-content: end;
+    margin: 1%;
+}
+/* Clock control button */
+.clockButton
+{
+    display: flex;
+    border-radius: 0.3em;
+    background-color: var(--Website-background);
+    cursor: pointer;
+    margin: 5%;
+    padding: 15%;
+}
+.clockButton.anim{
+    animation: hue-rot 3.1s linear infinite;
+}
+/* Text inside clock control */
+.clockButton > span
+{
+    font-size: 2vw;
+    user-select: none;
+    color: var(--TextColor);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
 }

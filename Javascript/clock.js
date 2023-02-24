@@ -12,16 +12,7 @@ function updateTime(type) {
     // print time
     document.getElementsByClassName("hms")[0].innerHTML = currentTime;
     /* date */
-    var dow = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      month = [
+    var month = [
         "January",
         "February",
         "March",
@@ -36,10 +27,21 @@ function updateTime(type) {
         "December"
       ],
       day = dateInfo.getDate();
+      var dayid = dateInfo.getDay(), dowid;
+      
+      switch(dayid){
+        case 1: dowid = "mon"; break;
+        case 2: dowid = "tue"; break;
+        case 3: dowid = "wed"; break;
+        case 4: dowid = "thu"; break;
+        case 5: dowid = "fri"; break;
+        case 6: dowid = "sat"; break;
+        case 0: dowid = "sun"; break;
+      }
   
     // store date
     var currentDate = day + " " +  month[dateInfo.getMonth()] + "</br>" + dateInfo.getFullYear();
-    var tBlock = document.getElementById(dateInfo.getDay());
+    var tBlock = document.getElementById(dowid);
   
     document.getElementsByClassName("date")[0].innerHTML = currentDate;
     tBlock.style.background = "#ff0015";
