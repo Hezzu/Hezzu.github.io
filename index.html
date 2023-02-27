@@ -11,7 +11,7 @@
     <script src="Javascript/autism.js"></script>
     <title>🌸Hezzu🌸</title>
 </head>
-<body onload="updateTime(false)">
+<body onload="updateTime()">
     <div id="Pane">
         <div id="controlMenu">
             <div id="themeButtons">
@@ -21,37 +21,21 @@
                 <div class="themeButton" id="themeContrast" onclick="changeTheme('contrast')"><span class="insideA"></span></div>
                 <i class="material-icons" onclick="huerot()">blind</i>
             </div>
-            <div id="clockButtons">
-                <div class="clockButton" onclick="updateTime(false)"><span>24h</span></div>
-                <div class="clockButton" onclick="updateTime(true)"><span>12h</span></div>
+            <div id="clock" onclick="changeTimeType()">
+                <div>
+                    <span class="hms"></span>
+                    <span class="ampm">
+                    <span class="am"></span>
+                    <span class="pm"></span>
+                </div>
+            </span>
             </div>
         </div> 
         <div id="mainPane">  
             <header>
+                <h1>🌸Hezzu🌸</h1>
                 <img alt="My actual discord pfp" draggable="false" src="./source/HeaderPhoto.webp">     
             </header>
-            <h1><span class="sak">🌸</span>Hezzu<span class="sak">🌸</span></h1>
-            <div id="cat">
-                <div id="cad">
-                    <div id="clock">
-                        <span class="hms"></span>
-                        <span class="ampm">
-                            <span class="am">AM</span>
-                            <span class="pm">PM</span>
-                        </span>
-                    </div>
-                    <div class="date"></div>    
-                </div>
-                <div class="weekDay">
-                    <span id="mon">Mon</span>
-                    <span id="tue">Tue</span>
-                    <span id="wed">Wed</span>
-                    <span id="thu">Thu</span>
-                    <span id="fri">Fri</span>
-                    <span id="sat">Sat</span>
-                    <span id="sun">Sun</span>
-                </div>
-            </div>
         </div>
     </div>
     <script src="Javascript/clock.js"></script>

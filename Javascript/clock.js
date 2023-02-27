@@ -1,53 +1,18 @@
-var type
-function updateTime(type) {
-    var dateInfo = new Date();
-    this.type = type
+var type = true;
+var dateInfo = new Date();
+function updateTime() {
   
     /* time */
     var hr = dateInfo.getHours(),
-      _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
-  
+        _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
     var currentTime = hr + ":" + _min  + " ";
   
     // print time
     document.getElementsByClassName("hms")[0].innerHTML = currentTime;
     /* date */
-    var month = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ],
-      day = dateInfo.getDate();
-      var dayid = dateInfo.getDay(), dowid;
-      
-      switch(dayid){
-        case 1: dowid = "mon"; break;
-        case 2: dowid = "tue"; break;
-        case 3: dowid = "wed"; break;
-        case 4: dowid = "thu"; break;
-        case 5: dowid = "fri"; break;
-        case 6: dowid = "sat"; break;
-        case 0: dowid = "sun"; break;
-      }
-  
-    // store date
-    var currentDate = day + " " +  month[dateInfo.getMonth()] + "</br>" + dateInfo.getFullYear();
-    var tBlock = document.getElementById(dowid);
-  
-    document.getElementsByClassName("date")[0].innerHTML = currentDate;
-    tBlock.style.background = "#ff0015";
-    tBlock.style.color = "#610000";
-
-     if(type)
+};
+function changeTimeType(){
+  if(type)
     {
         if (dateInfo.getHours() == 0) {
           hr = 12;
@@ -56,10 +21,6 @@ function updateTime(type) {
         } else {
           hr = dateInfo.getHours();
         }
-        // ampm = (dateInfo.getHours() > 12) ? "AM</br>PM" : "AM</br>PM";
-        // document.getElementsByClassName("ampm")[0].innerHTML = ampm;
-        // var currentTime = hr + ":" + _min;
-        // document.getElementsByClassName("hms")[0].innerHTML = currentTime;
         var am = document.getElementsByClassName("am")[0];
         var pm = document.getElementsByClassName("pm")[0];
         if(dateInfo.getHours() > 12)
@@ -74,14 +35,12 @@ function updateTime(type) {
           am.style.color = "#ff0015";
           pm.style.color = "#000000";
         }
-        var currentTime = hr + ":" + _min;
-        document.getElementsByClassName("hms")[0].innerHTML = currentTime;
       } else{
         document.getElementsByClassName("am")[0].innerHTML = "";
         document.getElementsByClassName("pm")[0].innerHTML = "";
       }
-
-};
+      type = !type
+    }
 
   // print time and date once, then update them every second
   updateTime(type);
