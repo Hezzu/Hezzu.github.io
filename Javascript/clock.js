@@ -1,17 +1,12 @@
-var type = true;
+var type = false;
 var dateInfo = new Date();
+var hr, _min;
+var clock = document.getElementById("clock");
 function updateTime() {
-  
-    /* time */
-    var hr = dateInfo.getHours(),
-        _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
-    var currentTime = hr + ":" + _min  + " ";
-  
-    // print time
-    document.getElementsByClassName("hms")[0].innerHTML = currentTime;
-    /* date */
-};
-function changeTimeType(){
+
+  hr = dateInfo.getHours(),
+  _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
+
   if(type)
     {
         if (dateInfo.getHours() == 0) {
@@ -39,11 +34,27 @@ function changeTimeType(){
         document.getElementsByClassName("am")[0].innerHTML = "";
         document.getElementsByClassName("pm")[0].innerHTML = "";
       }
-      type = !type
-    }
+  
+    /* time */
+
+    var currentTime = hr + ":" + _min  + " ";
+  
+    // print time
+    document.getElementsByClassName("hms")[0].innerHTML = currentTime;
+    /* date */
+};
+function changeTimeType(){
+  type = !type;
+  clock.style.opacity = 0;
+  setTimeout(()=> {
+    updateTime();
+    clock.style.opacity = 1;
+  }, 100);
+}
+  
 
   // print time and date once, then update them every second
   updateTime(type);
   setInterval(() => {
-    updateTime(type)
+    updateTime()
 }, 1000);
