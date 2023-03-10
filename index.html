@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="csses/default.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <script src="Javascript/autism.js"></script>
     <title>🌸Hezzu🌸</title>
@@ -15,12 +16,14 @@
     <div id="pane">
         <div id="controlMenu">
             <div id="themeButtons">
-                <div class="themeButton" id="themeBlack" onclick="changeTheme('black')"><span class="insideA"></span></div>
-                <div class="themeButton" id="themeWhite" onclick="changeTheme('white')"><span class="insideA"></span></div>
-                <div class="themeButton" id="themeColor" onclick="changeTheme('color')"><span class="insideA"></span></div>
-                <div class="themeButton" id="themeContrast" onclick="changeTheme('contrast')"><span class="insideA"></span></div>
-                <i class="material-icons" onclick="huerot()">blind</i>
-            </div>
+                <div class="themeButton" id="themeBlack" onclick="menuOpen()"><span class="material-symbols-outlined">settings</span></div>
+                </div>
+                    <span id="settings">
+                        <span><p>Background:&nbsp;</p><input class="cPicker" id="backgCP" type="color" value="#000000"></span>
+                        <span><p>Main Color:&nbsp;</p><input class="cPicker" id="mainCP" type="color" value="#1a0000"></span>
+                        <span><p>Secondary Color:&nbsp;</p><input class="cPicker" id="secCP" type="color" value="#5f0101"></span>
+                        <span><p>Text Color:&nbsp;</p><input class="cPicker" id="textCP" type="color" value="#ff0000"></span>
+                    </span>
             <div id="clock" onclick="changeTimeType()">
                 <div>
                     <span class="hms"></span>
@@ -34,7 +37,9 @@
         <div id="mainPane">  
             <header>
                 <h1>🌸Hezzu🌸</h1>
-                <img alt="My actual discord pfp" draggable="false" src="./source/HeaderPhoto.webp">     
+                <video alt="My actual discord pfp" autoplay loop>
+                    <source src="./source/HeaderPhoto.webm" type="video/webm">
+                </video>     
             </header>
         </div>
     </div>

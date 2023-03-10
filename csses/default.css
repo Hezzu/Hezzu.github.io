@@ -1,48 +1,21 @@
 :root
 {
     /* For Later JS */
-    --Website-background: #000000;
-    --Header-background: #1a0000;
-    --HeaderSubDivs-background: #5f0101;
-    --TopControls-background: #4d4d4d;
+    --Background: #000000;
+    --MainPane: #1a0000;
+    --SubColor: #5f0101;
     --TextColor: #ff0000;
-    /* Black Theme Colors */
-    --Website-background-black: #000000;
-    --Header-background-black: #1a0000;
-    --HeaderSubDivs-background-black: #5f0101;
-    --TopControls-background-black: #4d4d4d;
-    --TextColor-black: #ff0000;
-    /* White theme Colors */
-    --Website-background-white: #ffffff;
-    --Header-background-white: #bbbbbb;
-    --HeaderSubDivs-background-white: #7c7c7c;
-    --TopControls-background-white: #adadad;
-    --TextColor-white: ;
-    /* Color theme Colors */
-    --Website-background-color: #130044;
-    --Header-background-color: #0099ff;
-    --HeaderSubDivs-background-color: #00d9ff;
-    --TopControls-background-color: #71009e;
-    --TextColor-Colors: ;
-    /* Contrast theme Colors */
-    --Website-background-contrast: #000000;
-    --Header-background-contrast: #bbbbbb;
-    --HeaderSubDivs-background-contrast: #ffffff;
-    --TopControls-background-contrast: #dddddd;
-    --TextColor-contrast: ;
 
 }
 body{
     display: flex;
     flex-direction: column;
-    background: var(--Website-background);
+    background: var(--Background);
 
     align-items: center;
     font-family: "Arial", sans-serif;
     transition: opacity 1s;
-}
-body.anim{
-    animation: hue-rot 3s linear infinite;
+    text-shadow: 0 0px 3px var(--TextColor);
 }
 /* Whole site */
 #pane{
@@ -50,7 +23,6 @@ body.anim{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    background-color: var(--Header-background);
     border-radius: 1vw;
     width: 85vw;
     justify-content: center;
@@ -61,10 +33,11 @@ body.anim{
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    background-color: var(--M);
     width: 100%;
     justify-content: center;
+    background-color: var(--MainPane);
     color: var(--TextColor);
-    text-shadow: 0 0px 3px rgb(255, 0, 0);    
 }
 /* Header */
 header
@@ -72,14 +45,15 @@ header
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px rgb(255, 0, 0);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
     border-radius: 1em;
     margin: 5%;
     padding: 5%;
+    min-width: 85%;
     justify-content: center;
 }
 /* Image */
-header > img
+header > video
 {
     display: flex;
     flex-wrap: wrap;
@@ -87,7 +61,7 @@ header > img
     border: rgb(255, 0, 0) 0.15em solid;
     border-radius: 50%;
     animation: hue-rot 10s linear infinite;
-    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px rgb(255, 0, 0);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
 
 }
 
@@ -127,14 +101,13 @@ h1.anim{
 /* Clock */
 #clock
 {
-    color: #f00;
+    color: var(--TextColor);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 0.45em;
     padding: 0 5%;
-    text-shadow: 0 0px 3px rgb(255, 0, 0);
     transition: opacity 0.05s;
 }
 #clock > div{
@@ -172,12 +145,13 @@ h1.anim{
     align-items: center;
     width: 100%;
     border-radius: 1vw 1vw 0 0;
-    background-color: var(--HeaderSubDivs-background) ;
+    background-color: var(--SubColor) ;
 }
 /* Out Theme buttons */
 .themeButton
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10%;
@@ -185,65 +159,52 @@ h1.anim{
     border-radius: 0.3em;
     cursor: pointer;
 }
-.material-icons{
-    align-self: center;
-    font-size: 1.5em !important;
-    color: #bbff00;
-    animation: hue-rot 3s linear infinite;
-    cursor: pointer;
-    user-select: none;
-    text-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px rgb(255, 0, 0);
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
 }
 /* Inner Theme Buttons */
 .themeButton > span
 {
-    border-radius: 0.2em;
-    padding: 1vw 1vw;
     cursor: pointer;
 }
 /* div cointaing theme buttons */
 #themeButtons
 {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     margin: 1%;
 }
 /* Dark theme button */
 #themeBlack
 {
-    background-color: var(--Website-background-black);
+    background-color: var(--Website-background-black); /*TODO */
 }
-/* span inside dark theme button */
-#themeBlack > .insideA
-{
-    background-color: var(--Header-background-black);
+#settings{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    background-color: var(--MainPane);
+    color: var(--TextColor);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    padding: 2%;
+    opacity: 0;
+    top: 5%;
+    transition: opacity 0.15s;
+    z-index: 69420;
+    border-radius: 1.5%;
 }
-/* Light theme button */
-#themeWhite
-{
-    background-color: var(--Website-background-white);
+#settings > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-/* span inside light theme button */
-#themeWhite > .insideA
-{
-    background-color: var(--Header-background-white);
-}
-#themeColor
-{
-    background-image: url(../source/ColorBackground.webp);
-}
-#themeColor > .insideA
-{
-    background-color: var(--Header-background-color);
-}
-#themeContrast
-{
-    background-color: var(--Website-background-contrast);
-}
-#themeContrast> .insideA
-{
-    background-color: var(--Header-background-contrast);
-}
+
 /* div containing Clock Control buttons */
 #clockButtons
 {
@@ -256,7 +217,7 @@ h1.anim{
 {
     display: flex;
     border-radius: 0.3em;
-    background-color: var(--Website-background);
+    background-color: var(--Background);
     cursor: pointer;
     margin: 5%;
     padding: 15%;
@@ -270,7 +231,6 @@ h1.anim{
     font-size: 2vw;
     user-select: none;
     color: var(--TextColor);
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.24), 0 0px 10px rgb(255, 0, 0);
 }
 
 @media only screen and (max-width: 700px) {

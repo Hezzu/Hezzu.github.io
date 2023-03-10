@@ -1,34 +1,33 @@
-function changeTheme(theme){
-switch(theme){
-    case "black":
-        document.body.style.setProperty('--Website-background', '#000000')
-        document.body.style.background = "#000000"
-        document.body.style.setProperty('--Header-background', '#1a0000')
-        document.body.style.setProperty('--HeaderSubDivs-background', '#5f0101')
-        document.body.style.setProperty('--TopControls-background', '#4d4d4d')
-        break
-    case "white":
-        document.body.style.setProperty('--Website-background', '#ffffff')
-        document.body.style.background = "#ffffff"
-        document.body.style.setProperty('--Header-background', '#bbbbbb')
-        document.body.style.setProperty('--HeaderSubDivs-background', '#7c7c7c')
-        document.body.style.setProperty('--TopControls-background', '#adadad')
-        break
-    case "color":
-        document.body.style.setProperty('--Website-background', '#130044')
-        document.body.style.background = "url(source/ColorBackground.webp)"
-        document.body.style.setProperty('--Header-background', '#0099ff')
-        document.body.style.setProperty('--HeaderSubDivs-background', '#00d9ff')
-        document.body.style.setProperty('--TopControls-background', '#71009e')
-        break
-    case "contrast":
-        document.body.style.setProperty('--Website-background', '#000000')
-        document.body.style.background = "#000000"
-        document.body.style.setProperty('--Header-background', '#bbbbbb')
-        document.body.style.setProperty('--HeaderSubDivs-background', '#ffffff')
-        document.body.style.setProperty('--TopControls-background', '#dddddd')
-        break
-    default:
-        console.log("Error changing colors");
+document.querySelector("Video").playbackRate = .6;
+var settVis = true;
+const settings = document.getElementById("settings");
+
+const rootN = document.querySelector(":root");
+let varChanger = getComputedStyle(rootN);
+let bCP = document.getElementById("backgCP");
+let mCP = document.getElementById("mainCP");
+let sCP = document.getElementById("secCP");
+let tCP = document.getElementById("textCP");
+
+function menuOpen(){
+    if(!settVis){
+        settings.style.opacity = 0;
+        settVis = !settVis;
+    }else{
+        settings.style.opacity = 1;
+        settVis = !settVis;
+    }
+
 }
-}
+bCP.addEventListener('input', function() {
+    document.querySelector(":root").style.setProperty('--Background', bCP.value);
+   });
+mCP.addEventListener('input', function() {
+    document.querySelector(":root").style.setProperty('--MainPane', mCP.value);
+   });
+sCP.addEventListener('input', function() {
+    document.querySelector(":root").style.setProperty('--SubColor', sCP.value);
+   });
+tCP.addEventListener('input', function() {
+    document.querySelector(":root").style.setProperty('--TextColor', tCP.value);
+   });
