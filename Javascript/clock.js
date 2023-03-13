@@ -1,9 +1,10 @@
 var type = false;
-var dateInfo = new Date();
-var hr, _min;
-var clock = document.getElementById("clock");
+
 function updateTime() {
 
+  var dateInfo = new Date();
+  var hr, _min;
+  var clock = document.getElementById("clock");
   hr = dateInfo.getHours(),
   _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes();
 
@@ -41,8 +42,7 @@ function updateTime() {
   
     // print time
     document.getElementsByClassName("hms")[0].innerHTML = currentTime;
-    /* date */
-};
+  };
 function changeTimeType(){
   type = !type;
   clock.style.opacity = 0;
@@ -51,10 +51,7 @@ function changeTimeType(){
     clock.style.opacity = 1;
   }, 100);
 }
-  
-
-  // print time and date once, then update them every second
-  updateTime(type);
-  setInterval(() => {
-    updateTime()
+updateTime(type);
+setInterval(() => {
+  updateTime()
 }, 1000);
