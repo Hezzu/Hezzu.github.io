@@ -2,6 +2,7 @@ var type = false;
 
 function updateTime() {
 
+
   var dateInfo = new Date();
   var hr, _min;
   var clock = document.getElementById("clock");
@@ -23,13 +24,13 @@ function updateTime() {
         {
           am.innerHTML = "AM";
           pm.innerHTML = "PM";
-          pm.style.color = "#ff0015";
-          am.style.color = "#000000";
+          pm.style.color = getComputedStyle(document.documentElement).getPropertyValue("--TextColor");
+          am.style.opacity = "0.5";
         }else{
           am.innerHTML = "AM";
           pm.innerHTML = "PM";
-          am.style.color = "#ff0015";
-          pm.style.color = "#000000";
+          am.style.color = getComputedStyle(document.documentElement).getPropertyValue("--TextColor");
+          pm.style.opacity = "0.5";
         }
       } else{
         document.getElementsByClassName("am")[0].innerHTML = "";
