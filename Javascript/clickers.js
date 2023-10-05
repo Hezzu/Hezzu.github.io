@@ -58,10 +58,25 @@ setInterval(() => {
 
 
 // End of Clock Script | Start of Name Change
-var nickVar = false;
+let nickVar = false;
 function nameChange(){
   nickVar = !nickVar;
   let nick = document.getElementById("nick");
 
   nickVar == false ? nick.innerHTML = "🌸Megu Megu🌸" : nick.innerHTML = "🌸Hezzu🌸";
+}
+
+// End of Name Change | Start of List button
+let gHLWrapper = document.getElementById("lWrapper");
+let expdr = document.getElementById("gHExpdr");
+let checker = true;
+function collapsable(){
+  gHLWrapper.classList.toggle("collapsed");
+  if(checker){
+    expdr.innerHTML = "expand_less";
+    checker = !checker;
+  }else{
+    expdr.innerHTML = "expand_more";
+    checker = !checker;
+  }
 }
