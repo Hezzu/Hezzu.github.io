@@ -19,7 +19,7 @@ body{
     font-family: "Arial", sans-serif;
     transition: opacity 1s;
     text-shadow: 0 0px 3px var(--TextColor);
-    overflow: hidden;
+    /* overflow: hidden;  I dont remember if this is needed so i will comment because it breaks my future content */
 }
 /* Whole site */
 #pane{
@@ -37,9 +37,11 @@ body{
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    flex-direction: column;
     background-color: var(--M);
     width: 100%;
-    justify-content: center;
+    height: 200vh;
+    justify-content: baseline;
     background-color: var(--MainPane);
     color: var(--TextColor);
 }
@@ -92,7 +94,6 @@ header > video
     flex-direction: row;
     text-decoration: none;
     color: var(--TextColor);
-    fill: var(--TextColor);
     order: 2;
 }   
 h1{
@@ -118,6 +119,69 @@ h1.anim{
       text-shadow: 0 0 20px #000000, 0 0 40px #aa0000, 0 0 60px #aa0000;
     }
   }
+/* GitHub repo list*/
+#cWindow{
+    align-self: flex-start;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    margin: 3%;
+    overflow: hidden;
+    padding: 3%;
+    width: 88%;
+    border-radius: 1rem;
+}
+.gHList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
+    margin: 3% 0;
+    border-radius: 1rem;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+.gHList > a:first-child{
+    transform: scale(1.2);
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: var(--TextColor);
+}
+.gHList > a:last-child{
+    opacity: 0.7;
+}
+.gHList:hover{
+    transform: scale(1.05);
+}
+#gHWrapper{
+    display: flex;
+    padding: 0 1%;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    fill: var(--TextColor);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+#gHExpdr{
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+#lWrapper{
+    overflow-y: scroll;
+    height: 50vh;
+    transform-origin: top;
+    padding: 1% 3.5% 0 3.5%;
+}
+.collapsed{
+    height: 0 !important;
+    visibility: hidden;
+}
+
+
 /* Clock */
 #clock
 {
@@ -216,8 +280,8 @@ h1.anim{
     box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
     padding: 2%;
     /* opacity: 0; */
-    top: 1.5%;
-    left: 8%;
+    top: 2%;
+    left: 7.5%;
     transition: 0.15s;
     z-index: 1;
     border-radius: 5%;
@@ -258,7 +322,6 @@ h1.anim{
     user-select: none;
     color: var(--TextColor);
 }
-
 @media only screen and (max-width: 798px) {
 
 * {
