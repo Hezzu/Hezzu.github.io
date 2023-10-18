@@ -9,21 +9,20 @@
 }
 * {
     transition: 1s;
+    scrollbar-width: none;
+}
+*::-webkit-scrollbar{
+    display: none;
 }
 body{
     display: flex;
     flex-direction: column;
     background: var(--Background);
-
-    scrollbar-width: none;
     align-items: center;
     font-family: "Arial", sans-serif;
     transition: opacity 1s;
     text-shadow: 0 0px 3px var(--TextColor);
     /* overflow: hidden;  I dont remember if this is needed so i will comment because it breaks my future content */
-}
-body::-webkit-scrollbar{
-    display: none;
 }
 /* Whole site */
 #pane{
