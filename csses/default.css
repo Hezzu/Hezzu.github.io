@@ -75,18 +75,31 @@ body{
 .svgWrap{
     display: flex;
     justify-content: center;
+    text-decoration: none;
     width: 35%;
+    height: 60%;
+    flex-direction: column;
 }
-#dscrd:hover{
+/* #dscrd:hover{
     transition: 0.5s;
     transform: scale(1.1);
+} */
+.svgWrap:hover{
+
+    transform: scale(1.2);
+
 }
-#gthb:hover{
-    transition: 0.5s;
-    transform: scale(1.1);
+.svgWrap:hover .labe{
+    scale: 1;
 }
 .labe{
     scale: 0;
+    text-align: center;
+    color: var(--TextColor);
+    padding: 5%;
+    margin: 5%;
+    transition: 0.2s;
+    
 }
 header
 {
