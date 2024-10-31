@@ -1,4 +1,4 @@
-:root
+    :root
 {
     /* For Later JS */
     --Background: #000000;
@@ -13,14 +13,11 @@
 }
 *::-webkit-scrollbar{
     display: none;
-
 }
 body{
     display: flex;
     flex-direction: column;
     background: var(--Background);
-    
-
     align-items: center;
     font-family: "Arial", sans-serif;
     transition: opacity 1s;
