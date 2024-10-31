@@ -58,7 +58,7 @@ setInterval(() => {
 
 
 // End of Clock Script | Start of Name Change
-let nickVar = false;
+let nickVar = true;
 function nameChange(){
   nickVar = !nickVar;
   let nick = document.getElementById("nick");
@@ -68,6 +68,7 @@ function nameChange(){
 
 // End of Name Change | Start of List button
 let gHLWrapper = document.getElementById("lWrapper");
+let iILWrapper = document.getElementById("gWrapper");
 let expdr = document.getElementById("gHExpdr");
 let checker = true;
 function collapsable(){
