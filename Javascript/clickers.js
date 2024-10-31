@@ -89,5 +89,6 @@ function collapsable(){
     }else{
       expdr.innerHTML = "expand_more";
       checker = !checker;
+      
     }
 }
