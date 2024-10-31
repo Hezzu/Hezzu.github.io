@@ -1,0 +1,433 @@
+:root
+{
+    /* For Later JS */
+    --Background: #000000;
+    --MainPane: #1a0000;
+    --SubColor: #5f0101;
+    --TextColor: #ff0000;
+
+}
+* {
+    transition: 1s;
+    scrollbar-width: none;
+}
+*::-webkit-scrollbar{
+    display: none;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: var(--Background);
+    
+
+    align-items: center;
+    font-family: "Arial", sans-serif;
+    transition: opacity 1s;
+    text-shadow: 0 0px 3px var(--TextColor);
+    /* overflow: hidden;  I dont remember if this is needed so i will comment because it breaks my future content */
+}
+/* Whole site */
+#pane{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1vw;
+    width: 95vw;
+    justify-content: center;
+}
+/* Panel without color picker and clock switcher */
+#mainPane
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: var(--M);
+    width: 100%;
+    height: 200vh;
+    justify-content: baseline;
+    background-color: var(--MainPane);
+    color: var(--TextColor);
+}
+/* Header */
+#headWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 95%;
+}
+#sociaLinks{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    min-width: 35%;
+    margin: 4.5%;
+    padding: 5%;
+    border-radius: 1em; 
+}
+.svgIco{
+    fill:  var(--TextColor);
+    filter: drop-shadow(2px 2px 2px var(--TextColor));
+    padding: 5%;
+    margin: 5%;
+}
+.svgWrap{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 35%;
+    height: 60%;
+    flex-direction: column;
+    align-items: center;
+}
+/* #dscrd:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+} */
+.svgWrap:hover{
+
+    transform: scale(1.2);
+
+}
+.svgWrap:hover .labe{
+    scale: 1;
+}
+.labe{
+    scale: 0;
+    text-align: center;
+    color: var(--TextColor);
+    padding: 5%;
+    margin: 5%;
+    transition: 0.2s;
+    
+}
+header
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    border-radius: 1em;
+    margin: 4.5%;
+    padding: 5%;
+    min-width: 35%;
+    justify-content: space-evenly;
+}
+/* Image */
+header > video
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: rgb(255, 0, 0) 0.15em solid;
+    border-radius: 50%;
+    animation: hue-rot 10s linear infinite;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    order: 2;
+
+}
+
+@keyframes hue-rot {
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+    
+}
+/* Nickname */
+#h1wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    order: 1;
+}
+#h1wrapper > a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--TextColor);
+    order: 2;
+}   
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 3em;
+    margin: 1%;
+    white-space: nowrap;
+    justify-content: center;
+    user-select: none;
+    cursor: default;
+    order: 1;
+}
+h1.anim{
+    animation: hue-rot 2.5s linear infinite;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #000000, 0 0 10px #630000, 0 0 15px #630000;
+    }
+    to {
+      text-shadow: 0 0 20px #000000, 0 0 40px #aa0000, 0 0 60px #aa0000;
+    }
+  }
+/* GitHub repo list*/
+.cWindow{
+    align-self: flex-start;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    margin: 3%;
+    overflow: hidden;
+    padding: 3%;
+    width: 88%;
+    border-radius: 1rem;
+}
+.gHList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
+    margin: 3% 0;
+    border-radius: 1rem;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+.gHList > a:first-child{
+    transform: scale(1.2);
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: var(--TextColor);
+}
+.gHList > a:last-child{
+    opacity: 0.7;
+}
+.gHList:hover{
+    transform: scale(1.05);
+}
+.listWrapper{
+    display: flex;
+    padding: 0 1%;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    fill: var(--TextColor);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+#gHExpdr{
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+}
+#lWrapper{
+    overflow-y: scroll;
+    height: 50vh;
+    transform-origin: top;
+    padding: 1% 3.5% 0 3.5%;
+}
+#gWrapper{
+    overflow-y: scroll;
+    height: 22vh;
+    transform-origin: top;
+    padding: 1% 3.5% 0 3.5%;
+}
+.collapsed{
+    height: 0 !important;
+    visibility: hidden;
+}
+
+
+/* Clock */
+#clock
+{
+    color: var(--TextColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0.45em;
+    padding: 0 5%;
+    transition: opacity 0.05s;
+}
+#clock > div{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    user-select: none;
+}
+/* Clock time */
+  .hms {
+      font-size: 2em;
+      font-weight: 700;
+  }
+  /* Panel with both AM and PM divs */
+  .ampm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Am div */
+  .am {
+      font-size: 0.75em;
+      font-weight: 600;
+  }
+  /* Pm div */
+  .pm {
+    font-size: 0.75em;
+    font-weight: 600;
+}
+/* Controls Menu */
+#controlMenu
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1vw 1vw 0 0;
+    background-color: var(--SubColor) ;
+}
+/* Out Theme buttons */
+.themeButton
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    margin: 2%;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+/* Inner Theme Buttons */
+.themeButton > span
+{
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+/* div cointaing theme buttons */
+#themeButtons
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1%;
+}
+/* Dark theme button */
+#themeBlack
+{
+    background-color: var(--Website-background-black); /*TODO */
+}
+#settings{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    background-color: var(--MainPane);
+    color: var(--TextColor);
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    padding: 2%;
+    /* opacity: 0; */
+    top: 2%;
+    left: 3%;
+    transition: 0.15s;
+    z-index: 1;
+    border-radius: 5%;
+    transform-origin: top left;
+    transform: scale(0);
+    /* display: none; */
+}
+#settings > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* div containing Clock Control buttons */
+#clockButtons
+{
+    display: flex;
+    justify-content: end;
+    margin: 1%;
+}
+/* Clock control button */
+.clockButton
+{
+    display: flex;
+    border-radius: 0.3em;
+    background-color: var(--Background);
+    cursor: pointer;
+    margin: 5%;
+    padding: 15%;
+}
+.clockButton.anim{
+    animation: hue-rot 3.1s linear infinite;
+}
+/* Text inside clock control */
+.clockButton > span
+{
+    font-size: 2vw;
+    user-select: none;
+    color: var(--TextColor);
+}
+@media only screen and (max-width: 798px) {
+
+* {
+    transition: 1s;
+}
+
+header > video{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: rgb(255, 0, 0) 0.15em solid;
+    border-radius: 50%;
+    animation: hue-rot 10s linear infinite;
+    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
+    max-width: 50%;
+    order: 1;
+}
+#h1wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+}
+#h1wrapper > a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--TextColor);
+    fill: var(--TextColor);
+    order: 2;
+}   
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2em;
+    margin: 1%;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    user-select: none;
+    cursor: default;
+    order: 1;
+}
+
+}
