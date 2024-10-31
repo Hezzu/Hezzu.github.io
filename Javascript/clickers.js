@@ -80,3 +80,14 @@ function collapsable(){
     checker = !checker;
   }
 }
+  function collapsableG(){
+    iILWrapper.classList.toggle("collapsed");
+    if(checker){
+      expdr.innerHTML = "expand_less";
+      checker = !checker;
+    }else{
+      expdr.innerHTML = "expand_more";
+      checker = !checker;
+      
+    }
+}
