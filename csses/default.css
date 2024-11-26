@@ -57,85 +57,18 @@ body{
     justify-content: space-evenly;
     width: 95%;
 }
-#sociaLinks{
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
-    min-width: 35%;
-    margin: 4.5%;
-    padding: 5%;
-    border-radius: 1em; 
-}
-.svgIco{
-    fill:  var(--TextColor);
-    filter: drop-shadow(2px 2px 2px var(--TextColor));
-    padding: 5%;
-    margin: 5%;
-}
-.svgWrap{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    width: 35%;
-    height: 60%;
-    flex-direction: column;
-    align-items: center;
-}
-/* #dscrd:hover{
-    transition: 0.5s;
-    transform: scale(1.1);
-} */
-.svgWrap:hover{
-
-    transform: scale(1.2);
-
-}
-.svgWrap:hover .labe{
-    scale: 1;
-}
-.labe{
-    scale: 0;
-    text-align: center;
-    color: var(--TextColor);
-    padding: 5%;
-    margin: 5%;
-    transition: 0.2s;
-    
-}
 header
 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
     border-radius: 1em;
     margin: 4.5%;
     padding: 5%;
-    min-width: 35%;
-    justify-content: space-evenly;
-}
-/* Image */
-header > video
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: rgb(255, 0, 0) 0.15em solid;
-    border-radius: 50%;
-    animation: hue-rot 10s linear infinite;
-    box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
-    order: 2;
-
-}
-
-@keyframes hue-rot {
-    from{
-        filter: hue-rotate(0deg);
-    }
-    to{
-        filter: hue-rotate(360deg);
-    }
-    
+    min-width: 89%;
+    justify-content: space-between;
 }
 /* Nickname */
 #h1wrapper{
@@ -143,7 +76,6 @@ header > video
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    order: 1;
 }
 #h1wrapper > a{
     display: flex;
@@ -175,6 +107,51 @@ h1.anim{
       text-shadow: 0 0 20px #000000, 0 0 40px #aa0000, 0 0 60px #aa0000;
     }
   }
+/* Social Links */
+  #sociaLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor); */
+    min-width: 85%;
+    margin: 4.5%;
+    padding: 5%;
+    border-radius: 1em; 
+}
+.svgIco{
+    fill:  var(--TextColor);
+    filter: drop-shadow(2px 2px 2px var(--TextColor));
+    padding: 5%;
+    margin: 5%;
+}
+.svgWrap{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    /* width: 35%; */
+    /* height: 60%; */
+    flex-direction: column;
+    align-items: center;
+}
+.svgWrap:hover{
+
+    transform: scale(1.2);
+
+}
+.svgWrap:hover .labe{
+    scale: 1;
+}
+.labe{
+    scale: 0;
+    text-align: center;
+    color: var(--TextColor);
+    padding: 5%;
+    margin: 5%;
+    transition: 0.2s;
+    
+}
+
+
 /* GitHub repo list*/
 .cWindow{
     align-self: flex-start;
@@ -287,9 +264,10 @@ h1.anim{
 #controlMenu
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 1%;
     border-radius: 1vw 1vw 0 0;
     background-color: var(--SubColor) ;
 }
@@ -390,7 +368,7 @@ h1.anim{
     transition: 1s;
 }
 
-header > video{
+/* header > video{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -400,7 +378,7 @@ header > video{
     box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
     max-width: 50%;
     order: 1;
-}
+} */
 #h1wrapper{
     display: flex;
     flex-wrap: wrap;

@@ -63,7 +63,7 @@ function nameChange(){
   nickVar = !nickVar;
   let nick = document.getElementById("nick");
 
-  nickVar == false ? nick.innerHTML = "🌸Megu Megu🌸" : nick.innerHTML = "🌸Hezzu🌸";
+  nickVar == false ? nick.innerHTML = "Megu Megu" : nick.innerHTML = "Hezzu";
 }
 
 // End of Name Change | Start of List button
