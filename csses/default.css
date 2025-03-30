@@ -65,9 +65,9 @@ header
     flex-wrap: nowrap;
     box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor);
     border-radius: 1em;
-    margin: 4.5%;
+    margin: 4.5% 0;
     padding: 5%;
-    min-width: 89%;
+    min-width: 85%;
     justify-content: space-between;
 }
 /* Nickname */
@@ -112,6 +112,7 @@ h1.anim{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     /* box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.24), 0 0px 10px 2px var(--SubColor); */
     min-width: 85%;
     margin: 4.5%;
