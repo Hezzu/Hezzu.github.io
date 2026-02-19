@@ -1,0 +1,26 @@
+.body{
+    display: flex;
+    text-align: center;
+    background-color: rgb(16, 16, 16);
+    margin: 2vh 2vw;
+    padding: 5vh 5vw;
+    border-radius: 1em;
+    height: 100vh;
+}
+.temp{
+    /* background: radial-gradient(circle at center, black, crimson); */
+    /* background-clip: text; */
+    position: absolute;
+    left: 35vw;
+    top: 49vh;
+    font-size: 4rem;
+    color: black;
+    font-weight: bold;
+    text-shadow: 0 0 0.5rem crimson;
+}
+.temp::after{
+    content: "Made in React";
+    font-size: 1rem;
+    position: relative;
+    top: -5vh;
+}
